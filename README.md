@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Investment Wizard
+
+Investment Wizard is a local-first investment portfolio tracker built with Next.js. It helps you organize assets and categories, monitor allocations, record portfolio snapshots, and plan recurring buys with DCA schedules.
+
+## Features
+- Dashboard with total portfolio value, allocation breakdown, and return evolution.
+- Categories with target allocations and per-category totals.
+- Assets with current vs target allocation diffs.
+- Snapshots to track portfolio history over time.
+- DCA (Dollar Cost Averaging) plans with auto-generated schedules and completion tracking.
+- Investment rules and reminders.
+- Settings for currency and USD/BRL exchange rate.
+
+## Tech Stack
+- Next.js 16 (App Router)
+- React 19
+- SQLite via `better-sqlite3`
+- Tailwind CSS v4 + shadcn/ui
+- Recharts
+- Zod + react-hook-form
 
 ## Getting Started
 
-First, run the development server:
+### Requirements
+- Node.js 18+ (recommended)
+- npm, pnpm, or yarn
 
+### Install
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Run
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open `http://localhost:3000`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
+- `src/app` App Router pages (dashboard, assets, categories, snapshots, DCA, rules, settings)
+- `src/components` UI components, dialogs, charts, forms
+- `src/lib/db` SQLite connection and migrations
+- `src/lib/queries` Read models and computed stats
+- `src/lib/actions` Server actions for create/update/delete
+- `src/lib/validators` Zod schemas for validation
+- `data/` Local SQLite database and WAL files (ignored by git)
 
-## Learn More
+## Data Storage
+The database lives at `data/investment_wizard.db`. It is created and migrated automatically on first run. This file is local-only and is ignored by git.
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
+```bash
+npm run dev
+npm run build
+npm run start
+npm run lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Roadmap Ideas
+- Import/export (CSV)
+- Multi-currency support
+- Price feed integrations
+- Authentication and cloud sync
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
+Issues and PRs are welcome. If you plan a larger change, open an issue first to discuss scope and approach.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+Not specified yet.
