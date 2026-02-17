@@ -1,6 +1,6 @@
 # Investment Wizard
 
-Investment Wizard is a local-first investment portfolio tracker built with Next.js. It helps you organize assets and categories, monitor allocations, record portfolio snapshots, and plan recurring buys with DCA schedules.
+Investment Wizard is a local-first investment portfolio tracker built with Next.js. It helps you organize assets and categories, monitor allocations and record portfolio snapshots.
 
 ## Features
 - Dashboard with total portfolio value, allocation breakdown, and return evolution.
